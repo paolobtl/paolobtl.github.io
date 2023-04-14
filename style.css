@@ -213,7 +213,6 @@ header .navbar i:hover {
 
 .about .row .info h3 span {
 	color: var(--white2);
-	padding: 0 .5rem;
 }
 
 .about .row .counter {
@@ -255,7 +254,7 @@ header .navbar i:hover {
 	width: 27rem;
 	margin: 4rem 1rem;
 	padding-left: 4rem;
-	border-left: .2rem solid --white;
+	border-left: .2rem solid var(--white);
 	position: relative;
 }
 
@@ -277,6 +276,7 @@ header .navbar i:hover {
 	font-size: 1.4rem;
 	color: #eee;
 	padding: 1rem 0;
+	text-transform: none;
 }
 
 .experience .box-container .box i {
@@ -333,11 +333,18 @@ header .navbar i:hover {
 .contact .row .content .info h3 i {
 	padding-right: 1rem;
 	color: var(--yellow);
+	display: flex;
+	align-items: baseline;
 }
 
 
 .mail {
 	text-transform: lowercase;
+}
+
+.mail a{
+	text-transform: none;
+	cursor: pointer;
 }
 
 .top {
@@ -389,7 +396,7 @@ header .navbar i:hover {
 		font-size: 50%;
 	}
 	.top {
-		right: -50rem;
+		right: -40rem;
 	}
 }
 
