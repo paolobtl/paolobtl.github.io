@@ -1,115 +1,175 @@
 <!DOCTYPE html>
 <html lang="it">
+<!-- ?v=QDbjsABOnAU -->
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
-
-    <title>Paolo Bietolini - pagina personale</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Paolo Bietolini</title>
 </head>
 
 <body>
-    <div class="theme-switcher">
-        <img src="/assets/img/day-and-night.png" alt="" class="theme-switcher-icon">
-    </div>
-    <aside>
-        <div class="portrait">
-            <a href="/" target="_self"><img src="/assets/img/portrait.jpg" alt=""></a>
+
+
+    <header>
+        <div class="user">
+            <img src="/assets/img/portrait.jpg" alt="">
+            <h3 class="name">paolo bietolini</h3>
+            <p class="post">analytics developer</p>
         </div>
-        <nav>
+        <nav class="navbar">
             <ul>
-                <li><a href="" rel="noopener">Blog</a></li>
-                <!-- <li><a href="#progetti">Progetti</a></li> -->
-                <li class="dropdown">
-                    <a id="social" href="#" role="button">Social</a>
-                    <div class="subnav">
-                        <ul>
-                            <li><a href="https://github.com/paolobtl">GitHub</a></li>
-                            <li><a href="https://www.instagram.com/paoloinpolonia/">Instagram</a></li>
-                            <li><a href="https://linkedin.com/in/paolobietolini">LinkedIn</a></li>
-                            <li><a href="https://mastodon.uno/@plbtl">Mastodon</a></li>
-                        </ul>
-                    </div>
-                </li>
+                <li><a href="#home">home</a></li>
+                <li><a href="#about">chi sono</a></li>
+                <li><a href="#experience">esperienza</a></li>
+                <li><a href="#contact">contatti</a></li>
             </ul>
+            <a href="https://github.com/paolobtl" target="_blank" rel="noreferrer noopener nofollow">
+                <i class="fas fa-brands fa-github"></i>
+            </a>
+            <a href="https://mastodon.uno/@plbtl" target="_blank" rel="noreferrer noopener nofollow">
+                <i class="fas fa-brands fa-mastodon"></i>
+            </a>
+            <a href="https://linkedin.com/in/paolobietolini" target="_blank" rel="noreferrer noopener nofollow">
+                <i class="fas fa-brands fa-linkedin"></i>
+            </a>
         </nav>
-        <nav class="secondary-nav">
-            <ul>
-                <li><a href="#about">Chi sono</a></li>
-                <li><a href="#contatti">Contatti</a></li>
-            </ul>
-        </nav>
-    </aside>
+    </header>
+    <div id="menu" class="fas fa-bars"></div>
 
-    <main>
-        <article id="intro">
-            <h1>Ciao</h1>
-            <h2>Sono Paolo</h2>
-            <p><span>Usa il menù laterale per navigare.</span>
+    <!-- home section starts -->
+    <section class="home" id="home">
+        <h3>CIAO!</h3>
+        <h1>Sono <span>paolo bietolini</span></h1>
+        <p>Sono un Analytics Developer specializzato in Tag Management, appassionato di tecnologia fin dalla fine degli
+            anni '90. Implemento soluzioni di tag management per i siti web dei clienti, aiutandoli a raccogliere e
+            analizzare i dati dei loro utenti.</p> <p>
+                Quando non lavoro, mi dedico alle mie passioni
+                personali (come ad esempio fare questo sito).
+                Il digitale è la mia vera passione e mi piace tenere un occhio sulle ultime novità e tendenze del
+                settore, contribuendo al cambiamento in modo concreto.
             </p>
-        </article>
-        <!-- <article id="progetti">
-            <h1>Progetti</h1>
-            <p><span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis, quis ratione perspiciatis est at
-                    adipisci suscipit dolorum autem, cupiditate corrupti unde natus accusamus nulla necessitatibus
-                    corporis quae amet, cum molestiae!</span><span>Unde modi ratione molestiae asperiores maxime nam
-                    temporibus voluptates totam, reiciendis repellat expedita sit ducimus ex delectus obcaecati
-                    perspiciatis assumenda beatae tempore repudiandae saepe magni ut corrupti. Porro, dolorum
-                    facilis.</span><span>Eum sapiente sunt tenetur, porro quidem eligendi. Repellendus autem suscipit
-                    error porro aut explicabo dolorem nobis eaque! Eius explicabo reprehenderit id minima libero alias,
-                    quibusdam dicta sed. Nihil, quod delectus.</span><span>Soluta neque culpa similique. Fuga amet
-                    provident recusandae. Ratione voluptatibus facere pariatur explicabo deleniti, ullam perspiciatis,
-                    itaque facilis iure omnis accusamus. Quisquam laboriosam ut omnis maxime sed illo pariatur
-                    soluta.</span><span>Laborum quisquam accusantium voluptatibus, perferendis culpa quibusdam
-                    voluptates iusto aliquam deserunt delectus quis. Quia commodi vel vitae praesentium eius eaque ut
-                    ex, pariatur corporis numquam nisi tempora dolores accusantium odio?</span><span>Quae nam officiis
-                    tempore delectus impedit. Ab aspernatur repellat assumenda, amet et voluptates molestiae corporis.
-                    Voluptatem dicta vero atque reiciendis sunt accusantium fugit nisi dolore. Laudantium optio
-                    excepturi quaerat sint.</span><span>Numquam omnis fugit enim nesciunt a rerum magni, ipsam impedit
-                    nisi, esse libero nemo ea aliquam? Saepe hic excepturi quae earum pariatur aspernatur dicta
-                    laboriosam, aut quasi ratione placeat voluptas?</span><span>Quo modi, ipsum velit et sunt,
-                    laudantium officia possimus illo tempore ipsam pariatur inventore architecto quis dolorum non a quae
-                    cum facere repellendus officiis. Tempora est in mollitia libero ipsam.</span><span>Nihil quos
-                    mollitia laboriosam. Sapiente voluptates distinctio, quos beatae, dolorem ipsum quae obcaecati animi
-                    quam eum doloribus accusantium. Provident doloribus iure odio blanditiis dolorum odit sunt corrupti.
-                    Fugit, ipsum suscipit!</span><span>Perspiciatis praesentium doloribus vel optio cumque veniam
-                    voluptas minus ea nulla eos, illum sed atque, debitis laboriosam incidunt recusandae suscipit
-                    voluptatibus nihil placeat. Recusandae vitae ipsa rem laudantium. Eos, atque.</span></p>
-        </article> -->
-        <article id="about">
-            <h1>Chi sono</h1>
-            <p>
+        </p>
+        <a href="#about"><button class="btn"> su di me <i class="fas fa-user"></i></button></a>
+    </section>
+    <!-- home section ends -->
 
-                Ciao! Sono Paolo Bietolini, un <span class="bold">Analytics Developer</span> specializzato in tag
-                management. Nel mio lavoro tilizzo strumenti come Google Tag Manager e Adobe Launch.
-                <br>
-                La mia esperienza comprende l'utilizzo di software di analisi
-                come GA4 e Adobe Analytics. Sono in grado di lavorare con Javascript e ho una conoscenza
-                approfondita di
-                Google Cloud.
-                <br>
-                Il mio obiettivo è aiutare le aziende a raccogliere, analizzare e utilizzare i dati in
-                modo efficace per prendere decisioni informate e migliorare le loro strategie di marketing.
-                <br>
-                Se stai
-                cercando un esperto in tag management e analisi dei dati, non esitare a <a
-                    href="#contatti">contattarmi</a>!
+    <!-- about section starts -->
+    <section class="about" id="about">
+        <h1 class="heading"><span>chi</span> sono </h1>
+        <div class="row">
+            <div class="info">
+                <h3><span> nome: </span> paolo bietolini </h3>
+                <h3><span> titolo: </span> analytics developer </h3>
+                <h3><span> skills: </span> Javascript, GA4, GTM, Adobe Launch, Google Cloud </h3>
+                <h3><span> servizi: </span> setup Google Tag Manager e GA4, risoluzione dei problemi di tracciamento,
+                    training </h3>
+                <a href="#"><button class="btn"> scarica il CV <i class="fas fa-download"></i></button></a>
+            </div>
+            <div class="counter">
+                <div class="box">
+                    <span>5+</span>
+                    <h3>anni di esperienza</h3>
+                </div>
 
-            </p>
-        </article>
-        <article id="contatti">
-            <h1>Contatti</h1>
-            <p><span>hello[at]paolobietolini.com</span></p>
-        </article>
-    </main>
-    <footer>
-        <span>Paolo Bietolini</span>
-        <span></span>
-    </footer>
+                <div class="box">
+                    <span>80+</span>
+                    <h3>progetti completati</h3>
+                </div>
+
+                <div class="box">
+                    <span>1000</span>
+                    <h3>clienti soddisfatti</h3>
+                </div>
+
+                <!-- <div class="box">
+                    <span>12</span>
+                    <h3>premi vinti</h3>
+                </div> -->
+            </div>
+        </div>
+    </section>
+    <!-- about section ends -->
+
+    <!-- experience section stars -->
+    <section class="experience" id="experience">
+        <h1 class="heading"><span>esperienza</span> lavorativa </h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-briefcase"></i>
+                <span>2018</span>
+                <h3>Google Ads LCS Customer Experience Associate</h3>
+                <p>Specialista di Biddable Media, assistenza clienti LCS e trainer per Google Ads, Google Analytics e
+                    Merchant Center.
+                </p>
+            </div>
+            <div class="box">
+                <i class="fas fa-briefcase"></i>
+                <span>2021</span>
+                <h3>web implementation specialist</h3>
+                <p>specialista di Google Tag Manager e SME per il team italiano.
+                    Responsabile di implementazioni personalizzate in base
+                    alle necessità dei clienti.
+                </p>
+            </div>
+            <div class="box">
+                <i class="fas fa-briefcase"></i>
+                <span>2022</span>
+                <h3>analytics developer</h3>
+                <p>responsabile delle implementazioni su Tag Manager e Adobe Launch e POC per i mercati basati su
+                    Magento.
+                    Inoltre, progetto framework per la raccolta dati e fornisco soluzioni personalizzate in base al
+                    mercato.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- experience section ends  -->
+
+    <!-- contact section starts -->
+    <section class="contact" id="contact">
+        <h1 class="heading">contatta<span>mi</span></h1>
+        <div class="row">
+            <div class="content">
+                <h3 class="title">dove trovarmi</h3>
+                <div class="info">
+
+                    <h3 class="mail"><i class="fas fa-envelope"></i> hello[at]paolobietolini.me</h3>
+                    <h3><i class="fas fa-brands fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/paolobietolini" target="_blank"
+                            rel="noreferrer noopener nofollow">LinkedIn</a>
+                    </h3>
+                    <h3>
+                        <i class="fas fa-brands fa-mastodon"></i>
+                        <a href="https://mastodon.uno/@plbtl" target="_blank"
+                            rel="noreferrer noopener nofollow">Mastodon</a>
+                    </h3>
+                    <h3>
+                        <i class="fas fa-brands fa-github"></i>
+                        <a href="https://github.com/paolobtl" target="_blank"
+                            rel="noreferrer noopener nofollow">GitHub</a>
+                    </h3>
+                    <h3><i class="fas fa-map-marker-alt"></i> cracovia, polonia</h3>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- contact section ends -->
+
+    <!-- scroll top button -->
+    <a href="#home" class="top">
+        <img src="/assets/img/arrow-scroll-to-top.png" alt="">
+    </a>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
