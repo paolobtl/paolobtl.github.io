@@ -1,4 +1,9 @@
 $(document).ready(function () {
+
+
+  /* import header */
+
+   $( "#header" ).load( "assets\\public\\html\\nav.html" );
   if ($()) console.log('🚀 jQuery loaded')
   /* Change navbar links if not the root page */
   var root = window.location.origin + '/';
