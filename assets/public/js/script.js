@@ -1,5 +1,5 @@
 $(document).ready(function () {
-/* Change navbar links if not the root page */
+  /* Change navbar links if not the root page */
   var root = window.location.origin + '/';
   var currentPage = window.location.href;
   var navbarLinks = $(".navbar > ul > li > a");
