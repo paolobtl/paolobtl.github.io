@@ -1,0 +1,8 @@
+User-Agent: Googlebot
+Disallow: /assets
+
+User-Agent: MSNBot
+Disallow: /assets
+
+Sitemap: sitemap.xml
+

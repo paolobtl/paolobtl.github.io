@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="it">
+<!-- ?v=QDbjsABOnAU -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/public/css/style.css">
+    <link rel="stylesheet" href="/assets/public/css/article.css">
+    <link rel="stylesheet" href="/assets/public/css/prism.css">
+    <script src="/assets/public/js/script.js" defer></script>
+    <script src="/assets/public/js/toc.js" defer></script>
+    <script src="/assets/public/js/prism.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Paolo Bietolini</title>
+
+</head>
+
+<body>
+
+    <!--header bar-->
+    <header>
+        <div class="theme-selector">
+            <i class="fa-solid fa-sun"></i>
+        </div>
+        <div class="user">
+            <a href="/"><img src="/assets/img/portrait.jpg" alt=""></a>
+            <h3 class="name">paolo bietolini</h3>
+            <p class="post">analytics developer</p>
+        </div>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">home</a></li>
+                <li><a href="#blog">blog</a></li>
+                <li><a href="#about">chi sono</a></li>
+                <li><a href="#experience">esperienza</a></li>
+                <li><a href="#contact">contatti</a></li>
+            </ul>
+            <a href="https://github.com/paolobtl" target="_blank" rel="noreferrer noopener nofollow">
+                <i class="fas fa-brands fa-github"></i>
+            </a>
+            <a href="https://mastodon.uno/@plbtl" target="_blank" rel="noreferrer noopener nofollow">
+                <i class="fas fa-brands fa-mastodon"></i>
+            </a>
+            <a href="https://linkedin.com/in/paolobietolini" target="_blank" rel="noreferrer noopener nofollow">
+                <i class="fas fa-brands fa-linkedin"></i>
+            </a>
+        </nav>
+    </header>
+   
+
+    <!-- Hamburger Menu -->
+    <div id="menu" class="fas fa-bars"></div>
+
+    <!-- Blog Template Starts -->
+    <aside>
+        <div class="toc"></div>
+    </aside>
+    <article id="top">
+        <img src="/assets/img/300x200.jpg" alt="Immagine del primo post">
+        <h1 class="heading">Consent Mode e Iubenda <span>Come configurare il consenso dei cookie</span></h1>
+        <p class="date">15 Aprile 2023</p>
+
+
+        <h2>Introduzione</h2>
+        <p>
+            Come visto in <a
+                href="https://analyticsitalia.it/tag-manager/consent-mode-come-configurare-il-consenso-dei-cookie">questo
+                articolo</a> Google ha introdotto la Consent Mode per aiutare gli inserzionisti a gestire i
+            cookie a fini pubblicitari e statistici.
+            Questa funzionalità consente di regolare il comportamento dei tag di Google (e <u>non solo</u>) in base alle
+            preferenze di consenso degli utenti.
+
+            Con la Consent Mode i relativi cookie, pubblicitari o statistici, verranno salvati nel computer dell'utente
+            solamente se il consenso sarà stato fornito.
+            Se ad esempio un' utente non fornisce il consenso per i cookie pubblicitari, ma solo per quelli statistici,
+            potrai comunque misurare le conversioni tramite Analytics, in quanto l’impostazione analytics_storage sarà
+            attiva.
+        </p>
+        <p>
+            Tra le <a href="https://support.google.com/tagmanager/answer/10718549#cmp-integrations">CMP supportarte</a>
+            da
+            Google per un'integrazione della modalità di consenso troviamo Iubenda.
+            In questo articolo vedremo come gestire la Consent Mode in Iuenda tramite Tag Manager o tramite il
+            Tag Globale gTag.js.
+        </p>
+        <p>
+            Prima di iniziare voglio fare una piccola panoramica indicando tutte le soluzioni possibili:
+            <ul>
+                <li>Installazione interamente via codice e integrazione con gTag.js</li>
+                <li>Installazione via codice e integrazione con Google Tag Manager</li>
+                <li>Implementazione mista e gestione semi-automatizzata in Tag Manager</li>
+                <li>Implementazione mista e gestione interamente via Tag Manager</li>
+            </ul>
+
+            <hr>
+            Per implementazione mista intendo che dovrai comunque accedere al codice del sito per inserire il banner.
+            <br>
+            Non consiglio, come accennato in <a
+                href="https://analyticsitalia.it/tag-manager/consent-mode-come-configurare-il-consenso-dei-cookie/#1Installa_lo_script_del_consenso">questo
+                post</a>, l'utilizzo di un tag HTML personalizzato per caricare lo script di Iubenda.
+            <hr>
+        </p>
+
+        <h2>Preparazione dello script di Iubenda</h2>
+        <h3>Opzioni preliminari nella Dashboard</h3>
+        <p>
+            Dopo aver eseguito l'<a href="https://www.iubenda.com/it/">iscrizione a Iubenda</a> accedi alla tua <a
+                href="https://www.iubenda.com/it/dashboard">Dashboard</a> e apri, a sinistra, il sito
+            per il quale vuoi generare il banner.
+            <br>Sul lato destro troverai la voce Cookie Solution, clicca il pulsante Modifica e avrai di fronte questa
+            schermata:
+
+            IMG della pagina di configurazione
+
+            Sul lato sinistro troverai delle opzioni con sfondo azzurro e l'etichetta GDPR, spuntale tutte in questo
+            modo.
+            immagine
+
+            Ora, in alto a sinistra clicca Opzioni Avanzate e cerca la voce IMPOSTAZIONI RELATIVE AL CONSENSO PER
+            CATEGORIA.
+            Nella barra per la personalizzazone aggiungi gli ID relativi alla categoria di cookies che vuoi utilizzare.
+            Queste sono le categorie dei cookies che utilizerai e saranno necessarie per comunicare a Tag Manger, quindi
+            alla Consent Mode, quale cookie salvare in base al consenso.
+            In questo sito ho aggiunto 3,4,5 in quanto sto utilizzando cookies pubblicitari, di analisi e di
+            miglioramento
+            dell'esperienza utente.
+        </p>
+
+        <h3>Consenso per categoria</h3>
+        <p>
+            Le finalità sono raggruppate in 5 categorie (strettamente necessari, interazioni e funzionalità semplici,
+            miglioramento dell’esperienza, misurazione, targeting e pubblicità), ciascuna identificata da un id (1, 2,
+            3, 4,
+            5). Per impostazione predefinita, le categorie da mostrare vengono rilevate automaticamente dalla cookie
+            policy
+            di iubenda, ma puoi personalizzarle con il parametro purposes (ad esempio se usi la tua cookie policy
+            anziché
+            quella generata da iubenda).
+
+            A seguire le finalità per ogni categoria: <br>
+
+            <b>Strettamente necessari (id 1). Finalità incluse:</b>
+            <ul>
+                <li>Salvataggio e gestione di backup</li>
+                <li> Hosting ed infrastruttura backend</li>
+                <li> Gestione di landing page e pagine di invito</li>
+                <li> Servizi di piattaforma e hosting</li>
+                <li> Protezione dallo SPAM</li>
+                <li> Ottimizzazione e distribuzione del traffico</li>
+                <li> Monitoraggio dell’infrastruttura</li>
+                <li> Gestione dei pagamenti</li>
+            </ul>
+            <b>Interazioni e funzionalità semplici (id 2). Finalità incluse:</b>
+            <ul>
+                <li>Contattare l’Utente</li>
+                <li> Interazione con le piattaforme di live chat</li>
+                <li> Gestione di conferenze web e telefonia online</li>
+                <li> Gestione delle richieste di supporto e contatto</li>
+                <li> Interazione con le piattaforme di supporto e di feedback</li>
+                <li> Gestione dei tag</li>
+                <li> Registrazione ed autenticazione</li>
+                <li> Gestione dei database di Utenti</li>
+            </ul>
+            <b>Miglioramento dell’esperienza (id 3). Finalità incluse:</b>
+            <ul>
+                <li>Commento dei contenuti</li>
+                <li> Interazione con piattaforme di raccolta dati e altre terze parti</li>
+                <li> Visualizzazione di contenuti da piattaforme esterne</li>
+                <li> Interazione con social network e piattaforme esterne</li>
+                <li> Interazione con le piattaforme per sondaggi online</li>
+                <li> Gestione dei feed RSS</li>
+                <li> Funzionalità sociali</li>
+            </ul>
+            <b>Misurazione (id 4). Finalità incluse:</b>
+            <ul>
+                <li>Statistica</li>
+                <li> Beta testing</li>
+                <li> Test di performance di contenuti e funzionalità (A/B testing)</li>
+                <li> Heat mapping e registrazione sessioni</li>
+                <li> Gestione della raccolta dati e dei sondaggi online</li>
+            </ul>
+            <b>Targeting e pubblicità (id 5). Finalità incluse:</b>
+            <ul>
+                <li>Pubblicità</li>
+                <li> Infrastruttura al servizio pubblicitario</li>
+                <li> Affiliazione commerciale</li>
+                <li> Gestione contatti e invio di messaggi</li>
+                <li> Remarketing e behavioral targeting</li>
+            </ul>
+            Quindi, se per esempio devi mostrare tutte e 5 le categorie dovrai indicare "purposes": "1, 2, 3, 4, 5", ma
+            se
+            non devi mostrare Misurazione (id 4) indicherai "purposes": "1, 2, 3, 5" e così via.
+        </p>
+        <h3>Lo script</h3>
+        <p>
+            Una volta scelte le impostazioni di Iubenda clicca Salva in basso a destra. Nella schermata principale
+            seleziona
+            la voce Integra, qui troverai lo script.
+            Questo script andrà incollato nella sezione <code class="lang-js">&lt;head&gt;</code> del tuo sito. Nei
+            prossimi paragrafi
+            vedremo come integrarlo con Tag Manager o con <gTag class="js">
+                Qui sotto troverai uno script d'esempio, il tuo dovrà essere più o meno simile. Accertati che ci siano
+                le
+                righe <code class="lang-js">"perPurposeConsent":true,
+                    "purposes":"1,3,4,5",
+                    "enableTcf":true,
+                    "googleAdditionalConsentMode":true</code>.
+            </gTag>
+            <pre><code class="lang-js">
+            &lt;script&gt;
+            var _iub = _iub || [];
+            _iub.csConfiguration = {
+                "siteId":00000,         //Nota come siteId e cookiePolicyId siano impostati a 0, il valore lo troverai nella dashboard di Iubenda
+                "cookiePolicyId":000000,
+                "gdprAppliesGlobally":false,
+                "countryDetection":true,
+                "reloadOnConsent":true,
+                "consentOnContinuedBrowsing":false,
+                "perPurposeConsent":true,
+                "purposes":"1,3,4,5",
+                "enableTcf":true,
+                "googleAdditionalConsentMode":true,
+                "askConsentIfCMPNotFound":false,
+                "lang":"it",
+                "floatingPreferencesButtonDisplay":false,
+                "banner":{ 
+                    "acceptButtonDisplay":true,
+                    "customizeButtonDisplay":true,
+                    "acceptButtonColor":"#0073CE",
+                    "acceptButtonCaptionColor":"white",
+                    "customizeButtonColor":"#212121",
+                    "customizeButtonCaptionColor":"white",
+                    "rejectButtonDisplay":true,"rejectButtonColor":
+                    "rgba(0, 115.1, 206.18, 0.71)",
+                    "rejectButtonCaptionColor":"white",
+                    "listPurposes":true,
+                    "position":"float-bottom-center",
+                    "textColor":"#353535",
+                    "backgroundColor":"#ffffff" 
+                    }
+                };
+            &lt;/script&gt;
+            &lt;script src="//cdn.iubenda.com/cs/tcf/stub-v2.js"&gt;&lt;/script&gt;
+            &lt;script src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async&gt;&lt;/script&gt;
+        </code></pre>
+        </p>
+
+
+
+        <h2>Installazione interamente via codice e integrazione con gTag.js</h2>
+        <p>
+            Copia nella sezione <code class="lang-js">&lt;head&gt;</code> del tuo sito questo script opportunamente
+            modificato
+            <pre>
+            <code class="lang-js">
+                &lt;!-- Consent Mode --&gt;
+                &lt;script&gt;
+                    // Inizializzazione del dataLayer, obbligatoria
+                    window.dataLayer = window.dataLayer || [];
+
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+
+                    // La modalità di consenso predefinita è "denied" sia per gli ad_storage che per analytics_storage
+                    gtag("consent", "default", {
+                        ad_storage: "denied",
+                        analytics_storage: "denied",
+                        wait_for_update: 2000 // milliseconds
+                    });
+
+                    // Migliora la qualità del tracciamento dei clic sugli annunci (opzionale)
+                    gtag('set', 'url_passthrough', true);
+                    // Rimuove i dati degli annunci se lo ad_storage rimane su denied (opzionale)
+                    gtag("set", "ads_data_redaction", false);
+                &lt;/script&gt;
+
+                &lt;!-- Global site tag (gtag.js) - Google Analytics e/o Google Ads --&gt;
+                &lt;script async src="https://www.googletagmanager.com/gtag/js?id=ID_ANALYTICS"&gt;&lt;/script&gt;
+                &lt;script async src="https://www.googletagmanager.com/gtag/js?id=ID_ADS"&gt;&lt;/script&gt;
+
+                &lt;script&gt;   
+                    gtag('js', new Date());
+                    gtag('config', 'GOOGLE_ANALYTICS_ID');
+                    gtag('config', 'GOOGLE_ADS_ID');
+                &lt;/script&gt;
+
+                &lt;!-- Banner di Iubenda --&gt;
+                &lt;script&gt;
+                    var _iub = _iub || [];
+                    _iub.csConfiguration = {
+                        "siteId":00000,                     // ID di Iubenda
+                        "cookiePolicyId":000000,            // ID policy di Iubenda
+                        "gdprAppliesGlobally":false,
+                        "countryDetection":true,
+                        "reloadOnConsent":true,
+                        "consentOnContinuedBrowsing":false,
+                        "perPurposeConsent":true,
+                        "purposes":"1,3,4,5",
+                        "enableTcf":true,
+                        "googleAdditionalConsentMode":true,
+                        "askConsentIfCMPNotFound":false,
+                        "lang":"it",
+                        "floatingPreferencesButtonDisplay":false,
+                        "banner":{ 
+                            "acceptButtonDisplay":true,
+                            "customizeButtonDisplay":true,
+                            "acceptButtonColor":"#0073CE",
+                            "acceptButtonCaptionColor":"white",
+                            "customizeButtonColor":"#212121",
+                            "customizeButtonCaptionColor":"white",
+                            "rejectButtonDisplay":true,"rejectButtonColor":
+                            "rgba(0, 115.1, 206.18, 0.71)",
+                            "rejectButtonCaptionColor":"white",
+                            "listPurposes":true,
+                            "position":"float-bottom-center",
+                            "textColor":"#353535",
+                            "backgroundColor":"#ffffff" 
+                            }
+                        };
+                    &lt;/script&gt;
+                    &lt;script src="//cdn.iubenda.com/cs/tcf/stub-v2.js"&gt;&lt;/script&gt;
+                    &lt;script src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async&gt;&lt;/script&gt;
+            </code>
+        </pre>
+
+            <p>
+                Incollato questo codice la modalità di consenso sarà pronta e dovrai solamente eseguire il
+                debugging(LINK AL
+                CAPITOLO SUL DEBUGGING).
+                <br>
+                Nota che il comando <code class="lang-js">consent, update</code> verrà inviato autmaticamente dal banner
+                di Iubenda
+            </p>
+        </p>
+        <h2>Installazione via codice e integrazione con Tag Manager</h2>
+        <p>
+            Copia nella sezione <code class="lang-js">&lt;head&gt;</code> del tuo sito questo script opportunamente
+            modificato
+            <pre>
+            <code class="lang-js">
+                &lt;!-- Consent Mode --&gt;
+                &lt;script&gt;
+                    // Inizializzazione del dataLayer, obbligatoria
+                    window.dataLayer = window.dataLayer || [];
+
+                    function gtag() {
+                        dataLayer.push(arguments);
+                    }
+
+                    // La modalità di consenso predefinita è "denied" sia per gli ad_storage che per analytics_storage
+                    gtag("consent", "default", {
+                        ad_storage: "denied",
+                        analytics_storage: "denied",
+                        wait_for_update: 2000 // milliseconds
+                    });
+
+                    // Migliora la qualità del tracciamento dei clic sugli annunci (opzionale)
+                    gtag('set', 'url_passthrough', true);
+                    // Rimuove i dati degli annunci se lo ad_storage rimane su denied (opzionale)
+                    gtag("set", "ads_data_redaction", false);
+                &lt;/script&gt;
+
+                &lt;!-- Google Tag Manager --&gt;
+                &lt;script&gt;   
+                (function (w, d, s, l, i) {
+                    w[l] = w[l] || [];
+                    w[l].push({'gtm.start': new Date().getTime(),event: 'gtm.js'});
+                    var f = d.getElementsByTagName(s)[0],j = d.createElement(s),dl = l != 'dataLayer' ? '&l=' +l : '';
+                    j.async = true;
+                    j.src ='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                    f.parentNode.insertBefore(j, f);
+                  })
+                  (window, document, 'script','dataLayer', 'GTM-000000'); // Il tuo ID di Tag Manager
+                &lt;/script&gt;
+
+                &lt;!-- Banner di Iubenda --&gt;
+                &lt;script&gt;
+                    var _iub = _iub || [];
+                    _iub.csConfiguration = {
+                        "siteId":00000,                     // ID di Iubenda
+                        "cookiePolicyId":000000,            // ID policy di Iubenda
+                        "gdprAppliesGlobally":false,
+                        "countryDetection":true,
+                        "reloadOnConsent":true,
+                        "consentOnContinuedBrowsing":false,
+                        "perPurposeConsent":true,
+                        "purposes":"1,3,4,5",
+                        "enableTcf":true,
+                        "googleAdditionalConsentMode":true,
+                        "askConsentIfCMPNotFound":false,
+                        "lang":"it",
+                        "floatingPreferencesButtonDisplay":false,
+                        "banner":{ 
+                            "acceptButtonDisplay":true,
+                            "customizeButtonDisplay":true,
+                            "acceptButtonColor":"#0073CE",
+                            "acceptButtonCaptionColor":"white",
+                            "customizeButtonColor":"#212121",
+                            "customizeButtonCaptionColor":"white",
+                            "rejectButtonDisplay":true,"rejectButtonColor":
+                            "rgba(0, 115.1, 206.18, 0.71)",
+                            "rejectButtonCaptionColor":"white",
+                            "listPurposes":true,
+                            "position":"float-bottom-center",
+                            "textColor":"#353535",
+                            "backgroundColor":"#ffffff" 
+                            }
+                        };
+                    &lt;/script&gt;
+                    &lt;script src="//cdn.iubenda.com/cs/tcf/stub-v2.js"&gt;&lt;/script&gt;
+                    &lt;script src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async&gt;&lt;/script&gt;
+            </code>
+        </pre>
+
+            <p>
+                Incollato questo codice la modalità di consenso sarà pronta e dovrai solamente eseguire il
+                debugging(LINK AL
+                CAPITOLO SUL DEBUGGING).
+                <br>
+                Nota che il comando <code class="lang-js">consent, update</code> verrà inviato autmaticamente dal banner
+                di Iubenda
+            </p>
+        </p>
+        <h2>Implementazione mista e gestione semi-automatizzata in Tag Manager</h2>
+        <p>
+            In questa implementazione useremo il template per la Consent Mode di <a
+                href="https://www.simoahava.com/custom-templates/consent-mode/">Simo Ahava</a> per gestire la modalità
+            <code class="lang-js">default</code> <br>
+
+            <ul>
+                <li>Incolla questo script, opportunamente modificato, nella sezione <code
+                        class="lang-js">&lt;head&gt;</code> del tuo sito.
+                </li>
+                <pre>
+                <code class="lang-js">
+                    &lt;!-- Google Tag Manager --&gt;
+                    &lt;script&gt;
+                    (function (w, d, s, l, i) {
+                        w[l] = w[l] || [];
+                        w[l].push({'gtm.start': new Date().getTime(),event: 'gtm.js'});
+                        var f = d.getElementsByTagName(s)[0],j = d.createElement(s),dl = l != 'dataLayer' ? '&l=' +l : '';
+                        j.async = true;
+                        j.src ='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+                        f.parentNode.insertBefore(j, f);
+                      })
+                      (window, document, 'script','dataLayer', 'GTM-000000'); // Il tuo ID di Tag Manager
+                    &lt;/script&gt;
+                    &lt;!-- Banner di Iubenda --&gt;
+                    &lt;script&gt;
+                        var _iub = _iub || [];
+                        _iub.csConfiguration = {
+                            "siteId":00000,                     // ID di Iubenda
+                            "cookiePolicyId":000000,            // ID policy di Iubenda, conserva questo valore per Tag Manager
+                            "gdprAppliesGlobally":false,
+                            "countryDetection":true,
+                            "reloadOnConsent":true,
+                            "consentOnContinuedBrowsing":false,
+                            "perPurposeConsent":true,
+                            "purposes":"1,3,4,5",
+                            "enableTcf":true,
+                            "googleAdditionalConsentMode":true,
+                            "askConsentIfCMPNotFound":false,
+                            "lang":"it",
+                            "floatingPreferencesButtonDisplay":false,
+                            "banner":{
+                                "acceptButtonDisplay":true,
+                                "customizeButtonDisplay":true,
+                                "acceptButtonColor":"#0073CE",
+                                "acceptButtonCaptionColor":"white",
+                                "customizeButtonColor":"#212121",
+                                "customizeButtonCaptionColor":"white",
+                                "rejectButtonDisplay":true,"rejectButtonColor":
+                                "rgba(0, 115.1, 206.18, 0.71)",
+                                "rejectButtonCaptionColor":"white",
+                                "listPurposes":true,
+                                "position":"float-bottom-center",
+                                "textColor":"#353535",
+                                "backgroundColor":"#ffffff"
+                                }
+                            };
+                        &lt;/script&gt;
+                        &lt;script src="//cdn.iubenda.com/cs/tcf/stub-v2.js"&gt;&lt;/script&gt;
+                        &lt;script src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async&gt;&lt;/script&gt;
+            </code>
+        </pre>
+                <li>In Tag Manager crea, dal menù a sinistra, una variabile Cookie propietario e inserisci questo valore
+                    nel
+                    campo <i>Nome cookie</i>: <code class="lang-js">_iub_cs-000000</code>. <br>
+                    00000 sarà il valore dell'attributo <code class="lang-js">cookiePolicyId</code> nel banner.</li>
+
+                <li>Crea un nuovo tag e seleziona la barra azzurra in alto a destra, <i>Scopri più tipi di tag nella
+                        Galleria modelli della community</i>,</li>
+                <li>Aggiungi il tag <b>Consent Mode (Google tags)</b> di <i>gtm-templates-simo-ahava</i>,</li>
+                <ul>
+                    <li>Nella voce <i>Consent command</i> seleziona <i>default</i></li>
+                    <li>Clicca il pulsante <i>Add Setting</i> e seleziona per tutte le opzioni la voce <i>denied</i>
+                    </li>
+                </ul>
+                <li>Seleziona l'attivatore, in basso cliccando sull'icona dei due insiemi</li>
+                <ul>
+                    <li>Nella pagina di scelta dell'attivatore clicca il simbolo '+' in alto a destra</li>
+                    <li>Scegli <i>Inizializzazione del consenso</i></li>
+                    <li>Clicca sull'opizone <i>Alcune pagine</i> e dal menù a tenina scegli la variabile <i>Iubenda
+                            Policy Cookie</i></li>
+                    <li>Imposta la regole su "è uguale a" e scrivi <i>undefined</i> nel campo successivo, in questo modo
+                        lo script di default si attiverà solamente se l'utente non ha espresso alcuna preferenza</li>
+                </ul>
+            </ul>
+            Se volessi <strong>scaricare</strong> il contenitore già pronto, clicca qui.
+        </p>
+
+
+
+        <h2>Implementazione mista e gestione interamente via Tag Manager</h2>
+        <p>
+            In questa implementazione useremo il template per la Consent Mode di <a
+                href="https://www.simoahava.com/custom-templates/consent-mode/">Simo Ahava</a> per gestire la modalità
+            <code class="lang-js">default</code> <br>
+
+            <ul>
+                <li>Incolla questo script, opportunamente modificato, nella sezione <code
+                        class="lang-js">&lt;head&gt;</code> del tuo sito.
+                </li>
+                <pre>
+<code class="lang-js">
+  &lt;!-- Google Tag Manager --&gt;
+  &lt;script&gt;
+  (function (w, d, s, l, i) {
+    w[l] = w[l] || [];
+    w[l].push({'gtm.start': new Date().getTime(),event: 'gtm.js'});
+    var f = d.getElementsByTagName(s)[0],j = d.createElement(s),dl = l != 'dataLayer' ? '&l=' +l : '';
+    j.async = true;
+    j.src ='https://www.googletagmanager.com/gtm.js?id='+i+dl;
+    f.parentNode.insertBefore(j, f);
+  })
+    (window, document, 'script','dataLayer', 'GTM-000000'); // Il tuo ID di Tag Manager
+  &lt;/script&gt;
+  &lt;!-- Banner di Iubenda --&gt;
+  &lt;script&gt;
+    var _iub = _iub || [];
+    _iub.csConfiguration = {
+        "siteId":00000,                     // ID di Iubenda
+        "cookiePolicyId":000000,            // ID policy di Iubenda, conserva questo valore per Tag Manager
+        "gdprAppliesGlobally":false,
+        "countryDetection":true,
+        "reloadOnConsent":true,
+        "consentOnContinuedBrowsing":false,
+        "perPurposeConsent":true,
+        "purposes":"1,3,4,5",
+        "enableTcf":true,
+        "googleAdditionalConsentMode":true,
+        "askConsentIfCMPNotFound":false,
+        "lang":"it",
+        "floatingPreferencesButtonDisplay":false,
+        "banner":{
+            "acceptButtonDisplay":true,
+            "customizeButtonDisplay":true,
+            "acceptButtonColor":"#0073CE",
+            "acceptButtonCaptionColor":"white",
+            "customizeButtonColor":"#212121",
+            "customizeButtonCaptionColor":"white",
+            "rejectButtonDisplay":true,"rejectButtonColor":
+            "rgba(0, 115.1, 206.18, 0.71)",
+            "rejectButtonCaptionColor":"white",
+            "listPurposes":true,
+            "position":"float-bottom-center",
+            "textColor":"#353535",
+            "backgroundColor":"#ffffff"
+            }
+        };
+    &lt;/script&gt;
+    &lt;script src="//cdn.iubenda.com/cs/tcf/stub-v2.js"&gt;&lt;/script&gt;
+    &lt;script src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async&gt;&lt;/script&gt;
+  </code>
+</pre>
+
+                <li>In Tag Manager crea, dal menù a sinistra, una variabile Cookie propietario e inserisci questo valore
+                    nel
+                    campo <i>Nome cookie</i>: <code class="lang-js">_iub_cs-000000</code>. <br>
+                    00000 sarà il valore dell'attributo <code class="lang-js">cookiePolicyId</code> nel banner. <br>
+                    Spunta la casella <i> Decodifica in formato URI il cookie </i> e rinomina la variabile <i>Iubenda
+                        Policy
+                        Cookie</i>,</li>
+                <li>Crea una variabile <i>Tabella delle espressioni regolari</i> che prenda in input il cookie creato
+                    precedentemente, {{ Iubenda Policy Cookie }}
+                    <ul>
+                        <li>Nei campi pattern inserisci "#":false e "#":true, dove il simbolo # rappresenta la categoria
+                            dei
+                            cookies. <br>
+                            In questo caso ho inserito "5":false e "5":false affinché vengano letti i valori per la
+                            categoria della pubblicità </li>
+                        <li>
+                            Nei campi output inserisci rispettivamente <i>denied</i> e <i>granted</i>
+                        </li>
+                        <li>
+                            Spunta la casella <i>Imposta valore predefinito</i> e scrivi <i>denied</i>
+                        </li>
+                        <li>
+                            In <i>Advanced Settings</i> spunta solo la casella <i>Ingora maiuscole e minuscole</i>
+                        </li>
+                        <li>
+                            Salva con il nome <i>Consent Mode ad_storage</i>
+                        </li>
+                        <li>
+                            Ripeti lo stesso procedimento per analytics_storage e personalization_storage utilizzando
+                            rispettivamente i numeri "4" e "3" nel campo pattern.
+                        </li>
+                    </ul>
+                </li>
+                <li>Crea un nuovo tag e seleziona la barra azzurra in alto a destra, <i>Scopri più tipi di tag nella
+                        Galleria modelli della community</i>,</li>
+                <li>Aggiungi il tag <b>Consent Mode (Google tags)</b> di <i>gtm-templates-simo-ahava</i>,</li>
+                <ul>
+                    <li>Nella voce <i>Consent command</i> seleziona <i>default</i></li>
+                    <li>Clicca il pulsante <i>Add Setting</i> e seleziona la variabile <i>Consent Mode ad_storage</i>
+                        per il
+                        menù Advertising, <i>Consent Mode analytics_storage</i> per Analytics e <i>Consent Mode
+                            personalization_storage</i> per Personalization</li>
+                    <li>Clicca su Aggiungi in alto a destra</li>
+                </ul>
+                <li>Selezione l'attivatore, in basso e clicca sul logo dei due insiemi</li>
+                <ul>
+                    <li>Nella pagina di scelta dell'attivatore clicca il simbolo '+' in alto a destra</li>
+                    <li>Scegli <i>Inizializzazione del consenso</i></li>
+                    <li>Clicca sull'opzione <i>Alcune pagine</i> e dal menù a tenina scegli la variabile <i>Iubenda
+                            Policy Cookie</i></li>
+                    <li>Imposta la regole su "è uguale a" e scrivi nel campo successivo, <i>undefined</i>, in questo
+                        modo lo script di default si attiverà solamente se l'utente non ha espresso alcuna preferenza
+                    </li>
+                </ul>
+            </ul>
+            Per scaricare il contenitore già pronto, <a
+                href="https://gist.githubusercontent.com/paolobtl/caf749a256d12d56de899076fb7f05ad/raw/3685e48dd9708aa0b603350927cf83da182be5b1/Iubenda_ConsentMode.json">clicca
+                qui</a>.
+        </p>
+
+        <h2>Considerazioni e consigli</h2>
+        <h3>Perché due implementazioni simili per Tag Manager</h3>
+        <p>
+            Le ultime due implementazioni risultano piuttosto simili sebbene la seconda sia decisamente più complessa.
+            Ho deciso di includerle entrambe in quanto l'ultima, quella gestita interamente da Tag Manager, permette
+            maggiore flessibilità per i comandi <code class="lang-js">default</code> e <code
+                class="lang-js">update</code>.
+            Il consiglio quindi è quello di utilizzare l'implementazione semi-automatizzata nella quale l'aspetto di
+            aggiornamento dello stato del consenso è demandato interamente a Iubenda.
+        </p>
+        <h3>Opzione url_passthrough in Tag Manager</h3>
+        <p>
+            Come visto in <a
+                href="https://analyticsitalia.it/tag-manager/consent-mode-come-configurare-il-consenso-dei-cookie/#URL_Passthrough">questo
+                paragrafo</a> il parametro <code class="lang-js">url_passthrough</code> aiuta a trasmettere le
+            informazioni del clic sull'annuncio in caso di rifiuto dei cookies pubblicitari.
+            In Tag Manager questa opzione è disponibile sia nel template di Simo Ahava sotto la voce <i>Pass Ad Click
+                Information Through URLs</i> oppure nel tag <a
+                href="https://support.google.com/tagmanager/answer/7549390">Conversion Linker</a> nel check-box <i>
+                Attiva il collegamento in tutti gli URL delle pagine</i>.
+            Se già avessi un tag Conversion Linker spunta l'apposita opzione, altrimenti utilizza quella presente nel
+            template di Simo Ahava.
+            Maggiori informazioni sono disponibili, in inglese, in <a
+                href="https://developers.google.com/tag-platform/devguides/consent#ad_click_information">questo
+                articolo</a>
+        </p>
+
+
+
+        <p class="author"><span>Autore:</span> Paolo Bietolini</p>
+    </article>
+    <!-- Blog Template Ends -->
+
+    <!-- Scroll top button -->
+    <a href="#home" class="top">
+        <img src="/assets/img/arrow-scroll-to-top.png" alt="">
+    </a>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
