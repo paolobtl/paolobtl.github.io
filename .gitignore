@@ -1,2 +1,2 @@
 # Files to be excluded from GitHub repository
-assets/public/html/post-template.html
+assets/public/html/*
