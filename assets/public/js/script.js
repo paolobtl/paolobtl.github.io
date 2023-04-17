@@ -75,7 +75,7 @@ $(document).ready(function () {
 
     // save isLightMode preference in LocalStorage
     localStorage.setItem('isLightMode', isLightMode);
-
+    let lSisLightMode = localStorage.getItem('isLightMode');
     // update CSS variables to invert colors
     if (isLightMode) {
       $(':root').css('--yellow', '#f9ca24');

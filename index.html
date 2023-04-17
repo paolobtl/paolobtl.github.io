@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/public/css/style.css">
     <script src="assets/public/js/script.js" defer></script>
+    <script src="/assets/public/js/header.js" defer></script>
+    <script src="/assets/public/js/footer.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,35 +17,8 @@
 </head>
 
 <body>
-    <!--header bar-->
-    <header>
-        <div class="theme-selector">
-            <i class="fa-solid fa-sun"></i>
-        </div>
-        <div class="user">
-            <a href="/"><img src="/assets/img/portrait.jpg" alt=""></a>
-            <h3 class="name">paolo bietolini</h3>
-            <p class="post">analytics developer</p>
-        </div>
-        <nav class="navbar">
-            <ul>
-                <li><a href="#home">home</a></li>
-                <li><a href="#blog">blog</a></li>
-                <li><a href="#about">chi sono</a></li>
-                <li><a href="#experience">esperienza</a></li>
-                <li><a href="#contact">contatti</a></li>
-            </ul>
-            <a href="https://github.com/paolobtl" target="_blank" rel="noreferrer noopener nofollow">
-                <i class="fas fa-brands fa-github"></i>
-            </a>
-            <a href="https://mastodon.uno/@plbtl" target="_blank" rel="noreferrer noopener nofollow">
-                <i class="fas fa-brands fa-mastodon"></i>
-            </a>
-            <a href="https://linkedin.com/in/paolobietolini" target="_blank" rel="noreferrer noopener nofollow">
-                <i class="fas fa-brands fa-linkedin"></i>
-            </a>
-        </nav>
-    </header>
+    <!-- Header-->
+    <header-template></header-template>
 
     <!-- Hamburger Menu -->
     <div id="menu" class="fas fa-bars"></div>
@@ -103,7 +78,6 @@
         </div>
     </section>
     <!-- blog section ends -->
-
     <!-- about section starts -->
     <section class="about" id="about">
         <h1 class="heading"><span>chi</span> sono </h1>
@@ -209,12 +183,10 @@
         </div>
     </section>
     <!-- contact section ends -->
+    <!-- Sections Ends -->
 
-    <!-- Scroll top button -->
-    <a href="#home" class="top">
-        <img src="/assets/img/arrow-scroll-to-top.png" alt="">
-    </a>
-
+    <!-- Footer -->
+    <footer-template></footer-template>
     <!-- jQuery -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
         integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
