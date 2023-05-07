@@ -1,0 +1,66 @@
+.main-content-wrap,
+.side-content-wrap {
+    display: block;
+    max-width: 750px;
+    margin: 0 auto;
+    padding-right: 20px;
+    padding-left: 20px;
+	color: var(--white);
+}
+
+.title {
+	font-size: 3.2rem!important;
+}
+.article-heading {
+	text-align: left;
+	text-transform: uppercase;
+	font-size: 2.7rem;	
+	margin: 1em 0;
+    padding: 1rem;
+    border-bottom: .1rem solid #fff4;
+    color: var(--white);
+}
+
+.article p,
+#TableOfContents {
+    font-size: 2rem;
+    line-height: 2.2em;
+    letter-spacing: .01em;
+    color: var(--white)
+}
+
+#TableOfContents {
+	line-height: 3rem;
+    display: table;
+    /* font-size: 95%; */
+    margin: 1em 0 1em 0;
+    width: 100%;
+}
+
+.toc-wrap {
+    border: 1px solid #aaa;
+	padding: 1rem;
+}
+#TableOfContents ul {
+	list-style: none;
+	padding-left: 1.3rem;
+}
+#TableOfContents ul li a {
+	color: var(--white);
+	border-bottom: .1rem solid var(--yellow);
+
+}
+#TableOfContents ul li a:hover {
+	color: var(--yellow);
+	border-bottom: .1rem solid var(--white);
+}
+
+.section-article-info {
+	min-height: 50vh;
+    padding: 0;
+}
+
+.article-author {
+	font-size: 1.5rem;
+	color: var(--yellow);
+}

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paolo Bietolini</title>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/article.css">
+<link rel="stylesheet" href="/css/summary.css">
+
+<script>(function(P,a,o,l,о){P[l]=P[l]||[];P[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=a.getElementsByTagName(o)[0],
+j=a.createElement(o),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+о+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-0000');</script>
+
+<script src="/js/jquery.js" defer></script>
+<script src="/js/vanillajs.js" defer></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script>
+    dataLayer.push({});
+</script>
+  </head>
+  <body id="top">
+    
+<header>
+    <div class="theme-selector">
+    <i class="fa-solid fa-sun"></i>
+</div>
+<div class="user">
+    <a href="/"><img src="/img/portrait.jpg" alt=""></a>
+    <h3 class="name">paolo bietolini</h3>
+    <p class="post">analytics developer</p>
+</div>
+<nav class="navbar">
+    <ul>
+        <li><a href="https://paolobietolini.me/#home">home</a></li>
+        <li><a href="https://paolobietolini.me/#blog">blog</a></li>
+        <li><a href="https://paolobietolini.me/#about">chi sono</a></li>
+        <li><a href="https://paolobietolini.me/#experience">esperienza</a></li>
+        <li><a href="https://paolobietolini.me/#contact">contatti</a></li>
+    </ul>
+    <a href="https://github.com/paolobtl" target="_blank" rel="noreferrer noopener nofollow">
+        <i class="fas fa-brands fa-github"></i>
+    </a>
+    <a href="https://mastodon.uno/@plbtl" target="_blank" rel="noreferrer noopener nofollow">
+        <i class="fas fa-brands fa-mastodon"></i>
+    </a>
+    <a href="https://linkedin.com/in/paolobietolini" target="_blank" rel="noreferrer noopener nofollow">
+        <i class="fas fa-brands fa-linkedin"></i>
+    </a>
+</nav>
+</header>
+
+<div id="menu" class="fas fa-bars"></div>
+
+    
+<section class="main-content-wrap">
+  <h1 class="article-heading title">Server Side Introduzione</h1>
+  
+  
+  <aside class="toc-wrap">
+    <h2 class="toc">Tabella dei contenuti</h2>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cosè-la-tecnologia-server-side-di-gtm">Cos&rsquo;è la tecnologia Server Side di GTM?</a></li>
+    <li><a href="#come-funziona-la-tecnologia-server-side-di-gtm">Come funziona la tecnologia Server Side di GTM?</a></li>
+    <li><a href="#quali-sono-i-vantaggi-della-tecnologia-server-side-di-gtm">Quali sono i vantaggi della tecnologia Server Side di GTM?</a></li>
+    <li><a href="#come-implementare-la-tecnologia-server-side-di-gtm-correttamente">Come implementare la tecnologia Server Side di GTM correttamente?</a></li>
+  </ul>
+</nav>
+  </aside>
+  <div>
+    <article class="article">
+      
+      
+        <h1 class="article-heading" id="la-tecnologia-server-side-di-google-tag-manager">La tecnologia Server Side di Google Tag Manager</h1>
+<p>La tecnologia Server Side di Google Tag Manager (GTM) sta diventando sempre più popolare tra i professionisti del marketing digitale. In questo articolo, esploreremo cos&rsquo;è la tecnologia Server Side di GTM, come funziona, quali sono i suoi vantaggi e come implementarla correttamente.</p>
+<h2 class="article-heading" id="cosè-la-tecnologia-server-side-di-gtm">Cos&rsquo;è la tecnologia Server Side di GTM?</h2>
+<p>Innanzitutto, cos&rsquo;è GTM? Google Tag Manager è uno strumento di gestione dei tag che consente ai professionisti del marketing digitale di aggiungere, modificare e gestire i tag del sito web e di altre risorse online, senza dover dipendere dai team IT per effettuare questi cambiamenti.</p>
+<p>La tecnologia Server Side di GTM (SSGTM) è una versione avanzata di GTM che consente di gestire i tag lato server, invece che lato client. In altre parole, anziché caricare i tag del sito web sul browser del visitatore, i tag vengono elaborati e gestiti sul server del sito web.</p>
+<h2 class="article-heading" id="come-funziona-la-tecnologia-server-side-di-gtm">Come funziona la tecnologia Server Side di GTM?</h2>
+<p>In una configurazione Server Side di GTM, un server situato tra il browser del visitatore e il sito web elabora i tag del sito web anziché farlo direttamente sul browser del visitatore. Ciò significa che i tag vengono elaborati e gestiti lato server, anziché lato client.</p>
+<p>Per implementare la tecnologia Server Side di GTM, il primo passo è quello di configurare un server che fungerà da intermediario tra il browser del visitatore e il sito web. Successivamente, i tag del sito web vengono caricati sul server, che li elabora e li trasmette al browser del visitatore.</p>
+<h2 class="article-heading" id="quali-sono-i-vantaggi-della-tecnologia-server-side-di-gtm">Quali sono i vantaggi della tecnologia Server Side di GTM?</h2>
+<p>Ci sono diversi vantaggi nella tecnologia Server Side di GTM, tra cui:</p>
+<ol>
+<li>
+<p><strong>Maggiore sicurezza:</strong> la tecnologia Server Side di GTM protegge i dati dei visitatori del sito web, poiché i tag vengono elaborati e gestiti sul server del sito web, anziché sul browser del visitatore.</p>
+</li>
+<li>
+<p><strong>Maggiore velocità di caricamento della pagina:</strong> poiché i tag vengono elaborati e gestiti sul server, anziché sul browser del visitatore, la velocità di caricamento della pagina è generalmente più rapida.</p>
+</li>
+<li>
+<p><strong>Maggiore controllo sui tag:</strong> la tecnologia Server Side di GTM consente ai professionisti del marketing di avere un maggiore controllo sui tag del sito web, poiché i tag vengono elaborati e gestiti lato server.</p>
+</li>
+<li>
+<p><strong>Maggiore flessibilità:</strong> la tecnologia Server Side di GTM consente di utilizzare qualsiasi linguaggio di programmazione per gestire i tag del sito web, il che offre maggiore flessibilità nella loro gestione.
+Come implementare la tecnologia Server Side di GTM correttamente?</p>
+</li>
+</ol>
+<h2 class="article-heading" id="come-implementare-la-tecnologia-server-side-di-gtm-correttamente">Come implementare la tecnologia Server Side di GTM correttamente?</h2>
+<p>Per implementare correttamente la tecnologia Server Side di GTM, è importante seguire alcune linee guida.</p>
+<ol>
+<li>
+<p>Configurare correttamente il server: il server deve essere configurato correttamente per elaborare e gestire i tag del sito web. Questo richiede conoscenze di programmazione avanzate e può richiedere il supporto di un esperto di sviluppo web.</p>
+</li>
+<li>
+<p>Utilizzare un provider di server side tag management: ci sono diversi provider di server side tag management disponibili, tra cui Adobe Launch, Tealium e molti altri. Utilizzando un provider, il processo di implementazione della tecnologia Server Side di GTM sarà semplificato e la gestione dei tag del sito web sarà più efficiente.</p>
+</li>
+<li>
+<p>Testare attentamente: prima di implementare la tecnologia Server Side di GTM, è importante testare accuratamente il processo di caricamento dei tag e assicurarsi che tutto funzioni correttamente. Ciò può includere l&rsquo;elaborazione di scenari di test per assicurarsi che i tag vengano caricati correttamente.</p>
+</li>
+<li>
+<p>Monitorare i report di analisi: dopo l&rsquo;implementazione della tecnologia Server Side di GTM, è importante monitorare i report di analisi per verificare che i tag vengano caricati correttamente e che non ci siano problemi con la velocità di caricamento della pagina.</p>
+</li>
+<li>
+<p>Considerare i vantaggi e gli svantaggi: prima di implementare la tecnologia Server Side di GTM, è importante considerare attentamente i vantaggi e gli svantaggi. Mentre la tecnologia Server Side di GTM offre vantaggi significativi in termini di sicurezza e velocità di caricamento della pagina, può essere più complessa da implementare e gestire rispetto alla versione standard di GTM.</p>
+</li>
+</ol>
+<p>In conclusione, la tecnologia Server Side di GTM offre vantaggi significativi per i professionisti del marketing digitale che desiderano gestire i tag del sito web in modo più sicuro, efficiente e flessibile. Tuttavia, è importante seguire alcune linee guida per implementarla correttamente e monitorare attentamente i risultati per garantire il successo dell&rsquo;implementazione.</p>
+
+    </article>
+  </div>
+</section>
+<aside class="side-content-wrap">
+  <div>
+    <section class="section-article-info">
+      <h4 class="article-info article-author">Paolo</h4>
+      <h4 class="article-info">7 maggio 2023</h4>
+      
+    </section>
+  </div>
+  <div>
+    
+    
+  </div>
+</aside>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
+integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
+crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<footer>
+    <div class="footer">
+      <p>
+        &copy; <span id="currentYear"></span> <span>Paolo Bietolini</span> - Tutti i diritti riservati
+      </p>
+    </div>
+  </footer>
+    
+  <a href="#top" class="top">
+    <img src="https://paolobietolini.me/img/arrow-scroll-to-top.png" alt="">
+  </a>
+  </body>
+</html>

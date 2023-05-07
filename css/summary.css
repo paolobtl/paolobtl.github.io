@@ -1,0 +1,47 @@
+.blog {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    padding: 0 15rem;
+}
+a .summary {
+    padding: 2rem 0;
+    
+}
+.blog p {
+    font-size: 2rem;
+    color: var(--white2);
+    padding: 1rem 0;
+    text-transform: none;
+}
+#blog  div a span.read-more {
+    float:right;
+    color: var(--white2);
+ }
+ #blog  div a span.read-more:hover{
+    color: var(--yellow);
+ }
+.blog div span {
+    color: var(--yellow);
+    font-size: 1.5rem;
+    text-transform: none;
+}
+
+.blog a h2 {
+    font-size: 4rem;
+    color: var(--white);
+}
+
+.blog a img {
+    display: flex;
+    max-width: 80%;
+    align-items: center;
+}
+
+
+/* Media Queries */
+@media (max-width:1200px) {
+	.blog {
+		padding: 1rem 4rem;
+	}
+}

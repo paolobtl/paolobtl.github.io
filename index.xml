@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Paolo Bietolini</title>
+    <link>https://paolobietolini.me/</link>
+    <description>Recent content on Paolo Bietolini</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>it</language>
+    <lastBuildDate>Sun, 07 May 2023 00:01:28 +0200</lastBuildDate><atom:link href="https://paolobietolini.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Server Side Introduzione</title>
+      <link>https://paolobietolini.me/tag-management/server-side-introduzione/</link>
+      <pubDate>Sun, 07 May 2023 00:01:28 +0200</pubDate>
+      
+      <guid>https://paolobietolini.me/tag-management/server-side-introduzione/</guid>
+      <description>La tecnologia Server Side di Google Tag Manager La tecnologia Server Side di Google Tag Manager (GTM) sta diventando sempre più popolare tra i professionisti del marketing digitale. In questo articolo, esploreremo cos&amp;rsquo;è la tecnologia Server Side di GTM, come funziona, quali sono i suoi vantaggi e come implementarla correttamente.
+Cos&amp;rsquo;è la tecnologia Server Side di GTM? Innanzitutto, cos&amp;rsquo;è GTM? Google Tag Manager è uno strumento di gestione dei tag che consente ai professionisti del marketing digitale di aggiungere, modificare e gestire i tag del sito web e di altre risorse online, senza dover dipendere dai team IT per effettuare questi cambiamenti.</description>
+    </item>
+    
+  </channel>
+</rss>
