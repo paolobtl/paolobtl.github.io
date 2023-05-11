@@ -24,15 +24,18 @@
 .article p,
 #TableOfContents {
     font-size: 2rem;
-    line-height: 2.2em;
+    line-height: 2em;
     letter-spacing: .01em;
-    color: var(--white)
+    color: var(--white);
+    text-transform: none;
 }
-
+.article p .yellow {
+    color: var(--yellow);
+    text-transform: none;
+}
 #TableOfContents {
 	line-height: 3rem;
     display: table;
-    /* font-size: 95%; */
     margin: 1em 0 1em 0;
     width: 100%;
 }
@@ -48,7 +51,7 @@
 #TableOfContents ul li a {
 	color: var(--white);
 	border-bottom: .1rem solid var(--yellow);
-
+    text-transform: none;
 }
 #TableOfContents ul li a:hover {
 	color: var(--yellow);
