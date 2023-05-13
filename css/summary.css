@@ -18,13 +18,13 @@ a .summary-link {
 }
 .blog p {
     font-size: 2rem;
-    color: var(--white2);
+    color: var(--dark2);
     padding: 1rem 0;
     text-transform: none;
 }
 #blog  div a span.read-more {
     float:right;
-    color: var(--white2);
+    color: var(--dark2);
  }
  #blog  div a span.read-more:hover{
     color: var(--yellow);
@@ -37,7 +37,7 @@ a .summary-link {
 
 .blog a h2 {
     font-size: 4rem;
-    color: var(--white);
+    color: var(--black);
 }
 
 .blog a img {

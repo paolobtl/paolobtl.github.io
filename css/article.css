@@ -5,7 +5,7 @@
     margin: 0 auto;
     padding-right: 20px;
     padding-left: 20px;
-	color: var(--white);
+	color: var(--black2);
 }
 
 .title {
@@ -26,7 +26,7 @@
     font-size: 2rem;
     line-height: 2em;
     letter-spacing: .01em;
-    color: var(--white);
+    color: var(--black2);
     text-transform: none;
 }
 .article p .yellow {
@@ -49,7 +49,7 @@
 	padding-left: 1.3rem;
 }
 #TableOfContents ul li a {
-	color: var(--white);
+	color: var(--black2);
 	border-bottom: .1rem solid var(--yellow);
     text-transform: none;
 }
