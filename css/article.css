@@ -5,7 +5,7 @@
     margin: 0 auto;
     padding-right: 20px;
     padding-left: 20px;
-	color: var(--black2);
+	color: var(--dark);
 }
 
 .title {
@@ -18,24 +18,21 @@
 	margin: 1em 0;
     padding: 1rem;
     border-bottom: .1rem solid #fff4;
-    color: var(--white);
+    color: var(--dark);
 }
 
 .article p,
 #TableOfContents {
     font-size: 2rem;
-    line-height: 2em;
-    letter-spacing: .01em;
-    color: var(--black2);
+    color: var(--dark2);
+    padding: 1rem 0;
     text-transform: none;
 }
-.article p .yellow {
-    color: var(--yellow);
-    text-transform: none;
-}
+
 #TableOfContents {
 	line-height: 3rem;
     display: table;
+    /* font-size: 95%; */
     margin: 1em 0 1em 0;
     width: 100%;
 }
@@ -49,13 +46,13 @@
 	padding-left: 1.3rem;
 }
 #TableOfContents ul li a {
-	color: var(--black2);
+	color: var(--dark);
 	border-bottom: .1rem solid var(--yellow);
-    text-transform: none;
+
 }
 #TableOfContents ul li a:hover {
 	color: var(--yellow);
-	border-bottom: .1rem solid var(--white);
+	border-bottom: .1rem solid var(--dark);
 }
 
 .section-article-info {
@@ -66,4 +63,9 @@
 .article-author {
 	font-size: 1.5rem;
 	color: var(--yellow);
+}
+
+
+::marker {
+    font-size: 2rem;
 }

@@ -1,18 +1,10 @@
-.blog .article-cart-wrap {
+.blog {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
-    padding: 1rem 0;
+    flex-flow: column;
+    padding: 0 15rem;
 }
-
-article.article-card {
-    flex: 1 1 60rem;
-    padding: 2rem 6rem;
-    padding-left: 6rem;
-}
-
-a .summary-link {
+a .summary {
     padding: 2rem 0;
     
 }
@@ -37,7 +29,7 @@ a .summary-link {
 
 .blog a h2 {
     font-size: 4rem;
-    color: var(--black);
+    color: var(--dark);
 }
 
 .blog a img {

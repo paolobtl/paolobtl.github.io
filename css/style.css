@@ -7,6 +7,7 @@
 	--dark: #333;
 	--dark2: #222;
 	--black: #212427;
+	--header-bg: #fdfdfd;
 }
 
 * {
@@ -23,7 +24,7 @@
 
 *::selection {
 	background: var(--yellow);
-	color: var(--white);
+	color: var(--dark);
 }
 
 html {
@@ -37,7 +38,7 @@ html::-webkit-scrollbar {
 }
 
 html::-webkit-scrollbar-track {
-	background: var(--dark2);
+	background: var(--white2);
 }
 
 html::-webkit-scrollbar-thumb {
@@ -57,8 +58,8 @@ section {
 
 .btn {
 	padding: .7rem 3rem;
-	background: var(--white2);
-	color: var(--dark2);
+	background: var(--white);
+	color: var(--dark);
 	cursor: pointer;
 	margin-top: 1rem;
 	font-size: 2rem;
@@ -80,7 +81,7 @@ section {
 	font-size: 4rem;
 	padding: 1rem;
 	border-bottom: .1rem solid #fff4;
-	color: var(--dark2);
+	color: var(--dark);
 }
 
 .heading span {
@@ -94,11 +95,12 @@ header {
 	z-index: 1000;
 	height: 100%;
 	width: 35rem;
-	background-color: var(--white2);
+	background-color: var(--header-bg);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	flex-flow: column;
+	text-align: center;
 }
 
 header .theme-selector {
@@ -106,7 +108,7 @@ header .theme-selector {
 }
 
 header .theme-selector i {
-	color: var(--dark2);
+	color: var(--dark);
 	font-size: 1.5rem;
 	cursor: pointer;
 }
@@ -127,12 +129,12 @@ header .user img {
 
 header .user .name {
 	font-size: 3.5rem;
-	color: var(--dark2);
+	color: var(--dark);
 }
 
 header .user .post {
 	font-size: 2rem;
-	color: var(--white2);
+	color: var(--dark2);
 }
 
 header .navbar {
@@ -148,8 +150,8 @@ header .navbar ul li a {
 	display: block;
 	padding: 1rem;
 	margin: 1.5rem 0;
-	background: var(--white2);
-	color: var(--dark2);
+	background: var(--dark);
+	color: var(--white);
 	font-size: 2rem;
 	border-radius: 5rem;
 }
@@ -159,7 +161,7 @@ header .navbar ul li a:hover {
 }
 
 header .navbar i {
-	color: var(--dark2);
+	color: var(--dark);
 	font-size: 3.5rem;
 	padding: 2rem;
 }
@@ -172,8 +174,8 @@ header .navbar i:hover {
 	position: fixed;
 	top: 2rem;
 	right: 2rem;
-	background: var(--white2);
-	color: var(--dark2);
+	background: var(--white);
+	color: var(--dark);
 	cursor: pointer;
 	font-size: 2.5rem;
 	padding: 1rem 1.5rem;
@@ -190,12 +192,12 @@ header .navbar i:hover {
 
 .home h3 {
 	font-size: 2.5rem;
-	color: var(--dark2);
+	color: var(--dark);
 }
 
 .home h1 {
 	font-size: 5rem;
-	color: var(--dark2);
+	color: var(--dark);
 }
 
 .home h1 span {
@@ -243,7 +245,7 @@ header .navbar i:hover {
 
 .about .row .counter .box {
 	width: 20rem;
-	background: var(--dark2);
+	background: var(--header-bg);
 	text-align: center;
 	padding: 2rem;
 	margin: 2rem;
@@ -256,7 +258,7 @@ header .navbar i:hover {
 
 .about .row .counter .box h3 {
 	font-size: 2rem;
-	color: var(--white2);
+	color: var(--dark);
 }
 
 
@@ -273,21 +275,21 @@ header .navbar i:hover {
 	width: 27rem;
 	margin: 4rem 1rem;
 	padding-left: 4rem;
-	border-left: .2rem solid var(--dark2);
+	border-left: .2rem solid var(--dark);
 	position: relative;
 }
 
 .experience .box-container .box span {
 	font-size: 1.3rem;
 	background: var(--white2);
-	color: var(--dark2);
+	color: var(--dark);
 	border-radius: 5rem;
 	padding: .5rem 2.5rem;
 }
 
 .experience .box-container .box h3 {
 	font-size: 2rem;
-	color: var(--dark2);
+	color: var(--white);
 	padding-top: 1.5rem;
 }
 
@@ -308,7 +310,7 @@ header .navbar i:hover {
 	line-height: 5rem;
 	text-align: center;
 	font-size: 2rem;
-	color: var(--dark2);
+	color: var(--white);
 	background: var(--yellow);
 }
 
@@ -327,7 +329,7 @@ header .navbar i:hover {
 
 .contact .row .content .title {
 	text-transform: uppercase;
-	color: var(--dark2);
+	color: var(--dark);
 	font-size: 3rem;
 	padding-bottom: 2rem;
 }
@@ -378,14 +380,14 @@ header .navbar i:hover {
 	width: 8%;
 }
 
-footer p {
-	color: var(--dark2);
-	text-align: center;
+footer p{
+	color: var(--dark);
+    text-align: center;
 	margin: 0px 6rem;
 	font-size: 1.2rem;
-	position: relative;
-	bottom: 4rem;
-	z-index: 100;
+    position: relative;
+    bottom: 4rem;
+    z-index: 100;
 	text-transform: none;
 }
 
@@ -394,10 +396,9 @@ footer p span {
 }
 
 #currentYear {
-	color: var(--dark2);
+	color: var(--dark);
 }
-
-/* Blog Cards */
+ /* Blog Cards */
 .card-container {
 	display: flex;
 	flex-wrap: wrap;
@@ -441,7 +442,6 @@ footer p span {
 		padding: 1rem 4rem;
 	}
 }
-
 @media (max-width:991px) {
 	header {
 		left: -120%;
