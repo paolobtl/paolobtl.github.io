@@ -16,20 +16,20 @@ const darkTheme = {
     '--dark2': '#eee'
 };
 
-// Define a function to set the theme
-const setTheme = (themeMode) => {
-    const theme = themeMode === 'light' ? lightTheme : darkTheme;
-    Object.entries(theme).forEach(([property, value]) => {
-        document.documentElement.style.setProperty(property, value);
-    });
-    window.localStorage.setItem('themeMode', themeMode);
-};
+// // Define a function to set the theme
+// const setTheme = (themeMode) => {
+//     const theme = themeMode === 'light' ? lightTheme : darkTheme;
+//     Object.entries(theme).forEach(([property, value]) => {
+//         document.documentElement.style.setProperty(property, value);
+//     });
+//     window.localStorage.setItem('themeMode', themeMode);
+// };
 
-// Toggle theme mode on button click
-const toggleThemeMode = () => {
-    const themeMode = theme() === 'dark' ? 'light' : 'dark';
-    setTheme(themeMode);
-};
+// // Toggle theme mode on button click
+// const toggleThemeMode = () => {
+//     const themeMode = theme() === 'dark' ? 'light' : 'dark';
+//     setTheme(themeMode);
+// };
 
 // Check theme mode on page load
 const onLoad = () => {
