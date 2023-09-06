@@ -24,19 +24,28 @@
 .article p,
 #TableOfContents,
 .yellow,
-li {
+li
+{
     font-size: 2rem;
     color: var(--dark2);
     padding: 1rem 0;
     text-transform: none;
 }
-
+h2 > .toc-selector {
+    left: 78%;
+    position: absolute;
+}
+h2.toc {
+    font-size: 2rem;
+    cursor: pointer;
+}
 #TableOfContents {
-	line-height: 3rem;
+	line-height: 2rem;
     display: table;
     /* font-size: 95%; */
     margin: 1em 0 1em 0;
     width: 100%;
+    visibility: collapse;
 }
 
 .toc-wrap {
@@ -44,12 +53,13 @@ li {
 	padding: 1rem;
 }
 #TableOfContents ul {
-	list-style: none;
 	padding-left: 1.3rem;
+    list-style: outside none decimal;
 }
 #TableOfContents ul li a {
 	color: var(--dark);
 	border-bottom: .1rem solid var(--yellow);
+    padding-left: 1rem;
 
 }
 #TableOfContents ul li a:hover {

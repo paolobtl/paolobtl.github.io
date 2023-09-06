@@ -1,20 +1,23 @@
 // Footer year 
 document.getElementById('currentYear').innerHTML = new Date().getFullYear();
 
-// Set up variables for the theme modes
-const lightTheme = {
-    '--white': '#fff',
-    '--white2': '#eee',
-    '--dark': '#333',
-    '--dark2': '#222'
-};
+const tocElement = document.querySelector("#TableOfContents");
+const tocSelector = document.querySelector('.toc-selector');
+const h2Element = document.querySelector('h2.toc');
 
-const darkTheme = {
-    '--white': '#333',
-    '--white2': '#222',
-    '--dark': '#fff',
-    '--dark2': '#eee'
-};
+function toggleTocVisibility() {
+    if (tocSelector.textContent === 'NASCONDI') {
+        tocSelector.textContent = 'MOSTRA'
+        tocElement.style.visibility = 'collapse'
+    } else {
+        tocSelector.textContent = 'NASCONDI'
+        tocElement.style.visibility = 'visible'
+    }
+}
+
+h2Element.addEventListener('click', toggleTocVisibility);
+
+
 
 // Check theme mode on page load
 const onLoad = () => {
