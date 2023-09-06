@@ -22,7 +22,9 @@
 }
 
 .article p,
-#TableOfContents {
+#TableOfContents,
+.yellow,
+li {
     font-size: 2rem;
     color: var(--dark2);
     padding: 1rem 0;
@@ -65,7 +67,9 @@
 	color: var(--yellow);
 }
 
-
+span.yellow {
+    color: var(--yellow);
+}
 ::marker {
     font-size: 2rem;
 }
