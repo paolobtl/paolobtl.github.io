@@ -117,7 +117,6 @@ header .theme-selector i:hover {
 	color: var(--yellow);
 }
 
-
 header .user img {
 	height: 17rem;
 	width: 17rem;
@@ -432,6 +431,11 @@ footer p span {
 }
 
 /* media queries */
+@media (max-height:1200px) {
+	header .navbar ul li {
+		padding: 0;
+	}
+}
 @media (max-width:1200px) {
 	html {
 		font-size: 55%;
@@ -441,6 +445,7 @@ footer p span {
 	.blog {
 		padding: 1rem 4rem;
 	}
+
 }
 @media (max-width:991px) {
 	header {

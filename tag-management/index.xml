@@ -6,15 +6,14 @@
     <description>Recent content in Tag-managements on Paolo Bietolini</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>it</language>
-    <lastBuildDate>Sun, 07 May 2023 00:01:28 +0200</lastBuildDate><atom:link href="https://paolobietolini.me/tag-management/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 May 2023 00:01:28 +0200</lastBuildDate>
+    <atom:link href="https://paolobietolini.me/tag-management/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Server Side Introduzione</title>
       <link>https://paolobietolini.me/tag-management/server-side-introduzione/</link>
       <pubDate>Sun, 07 May 2023 00:01:28 +0200</pubDate>
-      
       <guid>https://paolobietolini.me/tag-management/server-side-introduzione/</guid>
       <description>Il Tagging Lato Server: Ottimizzazione Tecnica per Marketers Il tagging lato server rappresenta un metodo avanzato per gestire i tag e misurare l&amp;rsquo;attività degli utenti su siti web. Utilizzando modelli di tag, trigger e variabili simili a quelli che abbiamo sempre conosciuto, questa tecnologia offre nuovi strumenti per ottimizzare le performance del sito, garantire un controllo dettagliato sulla privacy degli utenti e migliorare la qualità dei dati. Prima di procedere, voglio ricordare che il tagging è il processo di aggiunta di frammenti di codice di terze parti a un sito web al fine di raccogliere e misurare dati.</description>
     </item>
-    
   </channel>
 </rss>
