@@ -15,7 +15,7 @@ function toggleTocVisibility() {
     }
 }
 
-h2Element.addEventListener('click', toggleTocVisibility);
+if(h2Element)h2Element.addEventListener('click', toggleTocVisibility);
 
 
 
