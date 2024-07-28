@@ -1,2 +1,2 @@
-Sitemap: https://paolobietolini.me/sitemap.xml
+Sitemap: https://paolobietolini.com/sitemap.xml
 User-agent: *
